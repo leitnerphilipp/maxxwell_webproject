@@ -32,6 +32,12 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function getPasswordByUsername($username)
+    {
+      $sql = "Select b.Passwort From Benutzer b where b.Benutzername = '$username'";
+      return $sql;
+    }
+
   function insert_new_user($username, $password, $email, $registerdate, $status)
   {
     $sql = "INSERT INTO Benutzer(Benutzername, Passwort, EMailAdresse, Vorname, Nachname, Geschlecht, Geburtsdatum, Firma, Selbstbeschreibung, Homepage, Telefonnummer, Fax, Letzteanmeldung, Registrierungsdatum, Status, Auftrag_Id, Adresse_Id) VALUES('$username', '$password', '$email', null, null, null, null, null, null, null, null, null, null, '$registerdate', '$status', null, null)";
@@ -62,8 +68,23 @@ error_reporting(E_ALL);
     return $sql;
   }
 
+  function update_user_password_by_email($password, $email)
+  {
+    $sql = "UPDATE Benutzer b where b.EMailAdresse = '$email' set b.Passwort = '$password'";
+    return $sql;
+  }
 
+  function update_user_password_by_username($password, $username)
+  {
+    $sql = "UPDATE Benutzer b where b.Benutzername = '$username' set b.Passwort = '$password'";
+    return $sql;
+  }
 
+  function update_user_email_by_username($email, $username)
+  {
+    $sql = "UPDATE Benutzer b where b.Benutzername = '$username' set b.EMailAdresse = '$email'";
+    return $sql;
+  }
 
   function execute($sql)
   {
