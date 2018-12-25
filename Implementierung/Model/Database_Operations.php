@@ -1,10 +1,13 @@
 <?php
 
 require_once 'DB_Connector.php';
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
   function test()
   {
-      echo "test";
+      echo "Operations On.";
   }
 
     test();
@@ -23,11 +26,11 @@ require_once 'DB_Connector.php';
       return $sql;
     }
 
-    foreach ($pdo->query(getUserById(1)) as $row) {
-   echo $row['Benutzername']."<br />";
-   echo $row['Passwort']."<br />";
-   echo $row['EMailAdresse']."<br /><br />";
-  }
+    function getUserByEMail($email)
+    {
+      $sql = "Select * From Benutzer where EMailAdresse = '$email'";
+      return $sql;
+    }
 
   function insert_new_user($username, $password, $email, $registerdate, $status)
   {
@@ -50,6 +53,12 @@ require_once 'DB_Connector.php';
   function insert_new_address($street, $housenr, $post, $location, $country)
   {
     $sql = "INSERT INTO Adresse(Straße, Hausnummer, Postleitzahl, Ort, Land) VALUES('$street', $housenr, $post, '$location', '$country')";
+    return $sql;
+  }
+
+  function update_user_password_by_email($password, $email)
+  {
+    $sql = "UPDATE Benutzer b where b.EMailAdresse = '$email' set b.Passwort = '$password'";
     return $sql;
   }
 

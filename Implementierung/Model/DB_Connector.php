@@ -1,13 +1,16 @@
 <?php
 
-  $servername = "mysqlsvr38.world4you.com";
-  $username = "sql1609210";
-  $password = "m*eyicr";
-  $db = "3810978db1";
+    error_reporting (E_ALL);
+    ini_set ('display_errors', 'On');
+
+  $servername = "127.0.0.1";
+  $username = "root";
+  $password = "";
+  $db = "DIPLDB";
 
   //try {
-   $pdo = new PDO('mysql:host=mysqlsvr38.world4you.com;dbname=3810978db1', $username, $password);
-   echo "Alright here we go";
+   $pdo = new PDO('mysql:host=127.0.0.1;dbname=DIPLDB', $username, $password);
+   echo "Database connected.";
 /*} catch (PDOException $e) {
    print "Error!: " . $e->getMessage() . "<br/>";
    die();
