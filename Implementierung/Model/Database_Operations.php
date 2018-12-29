@@ -20,6 +20,12 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function getIdByUsername($username)
+    {
+      $sql = "Select Benutzer_Id From Benutzer where Benutzername = '$username'";
+      return $sql;
+    }
+
     function getUserByUsername($username)
     {
       $sql = "Select * From Benutzer where Benutzername = '$username'";
@@ -35,6 +41,36 @@ error_reporting(E_ALL);
     function getPasswordByUsername($username)
     {
       $sql = "Select b.Passwort From Benutzer b where b.Benutzername = '$username'";
+      return $sql;
+    }
+
+    function getEMailByUsername($username)
+    {
+      $sql = "Select b.EMailAdresse From Benutzer b where b.Benutzername = '$username'";
+      return $sql;
+    }
+
+    function getUserAddressId($street, $housenr, $post, $location, $country)
+    {
+      $sql = "Select a.Adresse_Id From Adresse a where a.Straße = '$street' and a.Hausnummer = '$housenr' and a.Postleitzahl = '$post' and a.Ort = '$location' and a.Land = '$country'";
+      return $sql;
+    }
+
+    function getAssignmentId($name, $desc, $status, $createdate)
+    {
+      $sql = "Select a.Auftrag_Id From Auftrag a where a.Name = '$name' and a.Beschreibung = '$desc' and a.Status = '$status' and a.Erstellungsdatum = '$createdate'";
+      return $sql;
+    }
+
+    function getUserAddressByUsername($username)
+    {
+      $sql = "Select a From Benutzer b JOIN Addresse a using(Adresse_Id) where b.Benutzername = '$username'";
+      return $sql;
+    }
+
+    function getUserAssignmentsByUsername($username)
+    {
+      $sql = "Select a From Benutzer b JOIN Aufträge a using(Auftrag_Id) where b.Benutzername = '$username'";
       return $sql;
     }
 
@@ -58,13 +94,7 @@ error_reporting(E_ALL);
 
   function insert_new_address($street, $housenr, $post, $location, $country)
   {
-    $sql = "INSERT INTO Adresse(Straße, Hausnummer, Postleitzahl, Ort, Land) VALUES('$street', $housenr, $post, '$location', '$country')";
-    return $sql;
-  }
-
-  function update_user_password_by_email($password, $email)
-  {
-    $sql = "UPDATE Benutzer b where b.EMailAdresse = '$email' set b.Passwort = '$password'";
+    $sql = "INSERT INTO Adresse(Straße, Hausnummer, Postleitzahl, Ort, Land) VALUES('$street', $housenr, $post, '$city', '$country')";
     return $sql;
   }
 
@@ -85,6 +115,27 @@ error_reporting(E_ALL);
     $sql = "UPDATE Benutzer b where b.Benutzername = '$username' set b.EMailAdresse = '$email'";
     return $sql;
   }
+
+  function update_user_address_by_username($username, $address_id)
+  {
+    $sql = "UPDATE Benutzer b where b.Benutzername = '$username' set b.Adresse_Id = '$address_id'";
+    return $sql;
+  }
+
+  function update_user_assignment_by_username($username, $assignment_id)
+  {
+    $sql = "UPDATE Benutzer b where b.Benutzername = '$username' set b.Auftrag_Id = '$address_id'";
+    return $sql;
+  }
+
+
+  function deleteUserByUsername($username)
+  {
+    $sql = "DELETE Benutzer b where b.Benutzername = '$username'";
+    return $sql;
+  }
+
+
 
   function execute($sql)
   {

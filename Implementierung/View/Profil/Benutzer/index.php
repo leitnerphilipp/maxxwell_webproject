@@ -30,7 +30,7 @@
 
     <div class="wrapper">
 
-      <form>
+      <form  action="../../../Controller/UserProfile.php" method="post">
       <div class="profilcontainer">
 
       <ul class="collapsible">
@@ -49,25 +49,25 @@
               </div>
               <p>
                     <label>
-                      <input name="group1" type="radio" checked />
+                      <input name="group1" type="radio" checked value="M"/>
                       <span>Männlich</span>
                     </label>
                   </p>
                   <p>
                     <label>
-                      <input name="group1" type="radio" />
+                      <input name="group1" type="radio" value="W"/>
                       <span>Weiblich</span>
                     </label>
                   </p>
             <break>
             <p>Geburtstag</p>
-            <input type="date" class="datepicker"/>
+            <input type="date" class="datepicker" name="date"/>
             <div class="input-field">
               <input id="company" type="text" class="validate" name="company">
               <label for="company">Firma/Unternehmen</label>
             </div>
             <div class="input-field">
-              <textarea id="description" class="materialize-textarea"></textarea>
+              <textarea id="description" class="materialize-textarea" name="short-description"></textarea>
               <label for="description">Kurze Selbstbeschreibung</label>
             </div>
             </div>
@@ -105,7 +105,7 @@
               <div class="input-field">
                 <input id="fax" type="text" class="validate" name="fax">
                 <label for="fax">Fax</label>
-                <button class="btn waves-effect waves-light savePersonal" id="savePersonal" type="submit" name="action">Speichern
+                <button class="btn waves-effect waves-light savePersonal" id="savePersonal" type="submit" name="action1">Speichern
                 </button>
               </div>
             </div>
@@ -132,7 +132,7 @@
                     <input id="psw2" type="password" class="validate" name="psw2">
                     <label for="psw2">Passwort wiederholen</label>
                   </div>
-                   <button class="btn waves-effect waves-light" id="changePassword" type="submit" name="action">Passwort ändern
+                   <button class="btn waves-effect waves-light" id="changePassword" type="submit" name="action2">Passwort ändern
                    </button>
                  </form>
                 </div>
@@ -150,13 +150,13 @@
                       <input id="email2" type="password" class="validate" name="email2">
                       <label for="email2">E-Mail-Adresse wiederholen</label>
                     </div>
-                    <button class="btn waves-effect waves-light" id="changeEmail" type="submit" name="action">E-Mail-Adresse ändern
+                    <button class="btn waves-effect waves-light" id="changeEmail" type="submit" name="action3">E-Mail-Adresse ändern
                     </button>
                   </form>
                 </div>
                 <div class="col s4">
                   <form>
-                  <button class="btn waves-effect waves-light deleteAccount" id="deleteAccount" type="submit" name="action">Account löschen
+                  <button class="btn waves-effect waves-light deleteAccount" id="deleteAccount" type="submit" name="action4">Account löschen
                   </button>
                 </form>
                 </div>
@@ -181,10 +181,10 @@
                    <label for="ass_title">Auftragtitel</label>
                  </div>
                  <div class="input-field">
-                   <textarea id="ass_description" class="materialize-textarea"></textarea>
+                   <textarea id="ass_description" class="materialize-textarea" name="ass_desc"></textarea>
                    <label for="ass_description">Auftragsbeschreibung (so ausführlich wie möglich)</label>
                  </div>
-                 <button class="btn waves-effect waves-light createAssignment" id="createAssignment" type="submit" name="action">Erstellen
+                 <button class="btn waves-effect waves-light createAssignment" id="createAssignment" type="submit" name="action5">Erstellen
                  </button>
                </form>
                </div>
@@ -196,7 +196,7 @@
           <div class="collapsible-header"><i class="material-icons">face</i>Administrator kontaktieren</div>
           <div class="collapsible-body">
             <span id="Admin_Email">Email des Administrator</span>
-            <button class="btn waves-effect waves-light sendEmail" id="sendEmail">Email senden</button>
+            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href="mailto:webmaster1@nerdmania.at"">Email senden</button>
           </div>
 
        </li>
