@@ -1,11 +1,8 @@
 <?php
 
+session_start();
+
 require_once '../Model/Database_Operations.php';
-require_once 'ResetPassword.php';
-require_once 'ResetEMailAddress.php';
-require_once 'DeleteAccount.php';
-require_once 'createAssignment.php';
-require_once 'AdminMail.php';
 
 if (isset($_POST['action1'])) {
 
@@ -24,14 +21,47 @@ if (isset($_POST['action1'])) {
   $telephone      = $_POST['telephone'];
   $fax            = $_POST['fax'];
 
+  if (!isset($_SESSION['name'])) {
+    die('<a>Bitte zuerst einloggen!</a>');
+  }
 
-  $id = $pdo->query(getIdByUsername($_SESSION['name']));
 
-  $result1 = $pdo->query(insert_user_data($id, $firstname, $lastname, $gender, $date, $company, $description, $homepage, $telephone, $fax, null));
-  $result2 = $pdo->query(insert_new_address($street, $number, $postalcode, $city, $country));
-  $address = $pdo->query(getUserAddressId($street, $number, $postalcode, $city, $country)));
-  $result3 = $pdo->query(update_user_address($_SESSION['name'], $address));
+  $ex = $pdo->prepare(getIdByUsername($_SESSION['name']));
+  $ex->execute();
+  $id = $ex->fetch();
+  echo "ID: ".$id['Benutzer_Id'];
 
+
+  $result1 = $pdo->prepare(insert_user_data($id['Benutzer_Id'], $firstname, $lastname, $gender, $date, $company, $description, $homepage, $telephone, $fax, null));
+
+  $result2 = $pdo->prepare(insert_new_address($street, $number, $postalcode, $city, $country));
+
+  $result3 = $pdo->prepare(getUserAddressId($street, $number, $postalcode, $city, $country));
+
+  $result1->execute();
+  $result2->execute();
+  $result3->execute();
+  $addr_id = $result3->fetch();
+
+  $result4 = $pdo->prepare(update_user_address_by_username($_SESSION['name'], $addr_id['Adresse_Id']));
+  $result4->execute();
+
+}
+
+if (isset($_POST['action3'])) {
+  include('ResetEMailAddress.php');
+}
+
+if (isset($_POST['action2'])) {
+  include('ResetPassword.php');
+}
+
+if (isset($_POST['action4'])) {
+  include('DeleteAccount.php');
+}
+
+if (isset($_POST['action5'])) {
+  include('CreateAssignment.php');
 }
 
  ?>

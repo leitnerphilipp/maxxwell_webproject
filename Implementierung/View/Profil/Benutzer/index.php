@@ -137,7 +137,6 @@
                  </form>
                 </div>
                 <div class="col s4">
-                  <form>
                     <div class="input-field">
                       <input id="old_email" type="text" class="validate" name="old_email">
                       <label for="old_email">Alte E-Mail-Addresse</label>
@@ -152,7 +151,6 @@
                     </div>
                     <button class="btn waves-effect waves-light" id="changeEmail" type="submit" name="action3">E-Mail-Adresse ändern
                     </button>
-                  </form>
                 </div>
                 <div class="col s4">
                   <form>
@@ -175,7 +173,6 @@
              <div id="modalCreate" class="modal">
                <div class="modal-content">
                  <h4>Auftrag erstellen</h4>
-                 <form>
                  <div class="input-field">
                    <input id="ass_title" type="text" class="validate" name="ass_title">
                    <label for="ass_title">Auftragtitel</label>
@@ -186,7 +183,6 @@
                  </div>
                  <button class="btn waves-effect waves-light createAssignment" id="createAssignment" type="submit" name="action5">Erstellen
                  </button>
-               </form>
                </div>
              </div>
 
@@ -196,7 +192,7 @@
           <div class="collapsible-header"><i class="material-icons">face</i>Administrator kontaktieren</div>
           <div class="collapsible-body">
             <span id="Admin_Email">Email des Administrator</span>
-            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href="mailto:webmaster1@nerdmania.at"">Email senden</button>
+            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href='mailto:webmaster1@nerdmania.at'">Email senden</button>
           </div>
 
        </li>

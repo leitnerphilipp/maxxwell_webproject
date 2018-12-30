@@ -1,6 +1,4 @@
 <?php
-if (isset($_POST['action2'])) {
-
   $password = $pdo->query(getPasswordByUsername($_SESSION['name']));
 
   if (password_verify($_POST['old_psw'], $password)) {
@@ -11,7 +9,5 @@ if (isset($_POST['action2'])) {
       $result = $pdo->query(update_user_password_by_username($crypted, $_SESSION['name']));
   }
 
-
-}
 
  ?>

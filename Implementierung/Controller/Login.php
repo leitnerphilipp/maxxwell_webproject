@@ -16,16 +16,17 @@ if (isset($_POST['action'])) {
     foreach ($result as $row) {
       if (password_verify($_POST['password'], $row['Passwort'])) {
           echo 'Password is valid!';
-
+          
             if ($row['Status'] == 'benutzer') {
               session_start();//USER
               $_SESSION["access"] = "user";
-              $_SESSION["name"] = $row['username'];
+              $_SESSION["name"] = $row['Benutzername'];
+              header("Location: ../View/Profil/Benutzer/index.php");
             }
             if ($row['Status'] == 'admin') {
               session_start();//ADMIN
               $_SESSION["access"] = "admin";
-              $_SESSION["name"] = $row['username'];
+              $_SESSION["name"] = $row['Benutzername'];
             }
 
       } else {
