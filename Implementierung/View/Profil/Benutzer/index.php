@@ -1,3 +1,9 @@
+<?php
+ session_start();
+ if (!isset($_SESSION['name'])) {
+  die('<script>alert("Bitte zuerst einloggen!");</script>');
+} ?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -22,8 +28,8 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="../main/index.html">Start</a></li>
           <li><a href="../.html">Kontakt</a></li>
-          <li class="active"><a href="collapsible.html">Profil</a></li>
-          <li><a href="collapsible.html">Logout</a></li>
+          <li class="active"><a href="#">Profil</a></li>
+          <li><a href="../../../Controller/Logout.php">Logout</a></li>
         </ul>
       </div>
     </nav>

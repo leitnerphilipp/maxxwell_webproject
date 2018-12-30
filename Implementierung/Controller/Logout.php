@@ -1,12 +1,17 @@
 <?php
 
-if (isset($_POST['logout'])) {
+session_start();
 
+if (isset($_SESSION['name'])) {
+  echo "'<script>alert('Sie wurden erfolgreich abgemeldet!');</script>'";
   session_unset();
   session_destroy();
+  header('Location: ../View/login/index.php');
+}
 
-  echo "you are now logged out!";
-
+else {
+  echo "'<script>alert('Sie waren nicht angemeldet!');</script>'";
+  header('Location: ../View/login/index.php');
 }
 
  ?>
