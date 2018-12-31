@@ -34,6 +34,7 @@ if (isset($_POST['action'])) {
               session_start();//ADMIN
               $_SESSION["access"] = "admin";
               $_SESSION["name"] = $row['Benutzername'];
+              header("Location: ../View/Profil/Administrator/index.php");
             }
 
       } else {

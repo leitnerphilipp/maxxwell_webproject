@@ -77,6 +77,18 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function getAllAssignments()
+    {
+      $sql = "Select * From Auftraege";
+      return $sql;
+    }
+
+    function countAllAssignments()
+    {
+      $sql = "Select count(*) From Auftraege";
+      return $sql;
+    }
+
   function insert_new_user($username, $password, $email, $registerdate, $status)
   {
     $sql = "INSERT INTO Benutzer(Benutzername, Passwort, EMailAdresse, Vorname, Nachname, Geschlecht, Geburtsdatum, Firma, Selbstbeschreibung, Homepage, Telefonnummer, Fax, Letzteanmeldung, Registrierungsdatum, Status, Auftrag_Id, Adresse_Id) VALUES('$username', '$password', '$email', null, null, null, null, null, null, null, null, null, null, '$registerdate', '$status', null, null)";

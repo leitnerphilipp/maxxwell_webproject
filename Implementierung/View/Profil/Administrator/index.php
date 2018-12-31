@@ -1,3 +1,20 @@
+<?php
+require_once '../../../Model/Database_Operations.php';
+ session_start();
+ if (!isset($_SESSION['name'])) {
+  die('<script>alert("Bitte zuerst einloggen!");</script>');
+  }
+  else {
+
+    include '../../../Controller/AdminProfile.php';
+
+  }
+
+
+
+
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -30,7 +47,7 @@
 
     <div class="wrapper">
 
-      <form  action="" method="post">
+      <form  action="../../../Controller/AdminControl.php" method="post">
       <div class="profilcontainer">
 
       <ul class="collapsible">
@@ -272,7 +289,7 @@
                                  </label>
                             </p>
                             <span>Auftraggeber per E-Mail kontaktieren</span>
-                            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href='mailto:webmaster1@nerdmania.at'">E-Mail</button>
+                            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href='mailto:<?php htmlspecialchars($email); ?>'">E-Mail</button>
                           </div>
                           <div class="col s3">
                             <div class="input-field">
@@ -393,7 +410,7 @@
                           </div>
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="first-name" type="text" class="validate" name="first-name">
+                              <input id="first-name" type="text" class="validate" name="first-name" value="<?php htmlspecialchars($firstname)?>">
                               <label for="first-name">Vorname</label>
                             </div>
                             <div class="input-field">
