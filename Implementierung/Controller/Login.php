@@ -13,10 +13,17 @@ if (isset($_POST['action'])) {
 
     $result = $pdo->query(getUserByUsername($_POST['username']));
 
+    if (strpos($_POST['username'], '@') !== false) {
+      $result = $pdo->query(getUserByEMail($_POST['username']));
+    }
+    else {
+      $result = $pdo->query(getUserByUsername($_POST['username']));
+    }
+
     foreach ($result as $row) {
       if (password_verify($_POST['password'], $row['Passwort'])) {
           echo 'Password is valid!';
-          
+
             if ($row['Status'] == 'benutzer') {
               session_start();//USER
               $_SESSION["access"] = "user";

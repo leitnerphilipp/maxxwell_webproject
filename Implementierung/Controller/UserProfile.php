@@ -21,7 +21,7 @@ if (isset($_POST['action1'])) {
   $telephone      = $_POST['telephone'];
   $fax            = $_POST['fax'];
 
-  
+
 
 
   $ex = $pdo->prepare(getIdByUsername($_SESSION['name']));

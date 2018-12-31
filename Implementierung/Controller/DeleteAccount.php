@@ -1,8 +1,8 @@
 <?php
 
-  echo "Pop up button";
+  echo "'<script>alert('Sie sind im Inbegriff Ihren Account zu löschen!');</script>'";
 
   $result5 = $pdo->query(deleteUserByUsername($_SESSION['name']));
-  include('Logout.php');
+  header('Location: Logout.php');
 
  ?>
