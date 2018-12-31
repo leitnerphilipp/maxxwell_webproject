@@ -21,9 +21,7 @@ if (isset($_POST['action1'])) {
   $telephone      = $_POST['telephone'];
   $fax            = $_POST['fax'];
 
-  if (!isset($_SESSION['name'])) {
-    die('<a>Bitte zuerst einloggen!</a>');
-  }
+  
 
 
   $ex = $pdo->prepare(getIdByUsername($_SESSION['name']));
