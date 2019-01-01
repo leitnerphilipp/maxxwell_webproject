@@ -1,6 +1,9 @@
 <?php
-require_once '../../../Model/Database_Operations.php';
+
  session_start();
+
+  require_once '../../../Model/Database_Operations.php';
+
  if (!isset($_SESSION['name'])) {
   die('<script>alert("Bitte zuerst einloggen!");</script>');
   }
@@ -98,6 +101,24 @@ require_once '../../../Model/Database_Operations.php';
            <div class="collapsible-header"><i class="material-icons">assignment</i>Laufende Aufträge</div>
            <div class="collapsible-body">
               <div class="row">
+
+                <?php
+                for ($i=0; $i < $AssignmentsCount['count(*)']; $i++) {
+                  $id = $assignment_id;
+                  include '../../../Controller/AdminAssignments.php'; ?>
+                  
+                  <div class="col s3">
+                    <div class="assignment">
+                      <a class="modal-trigger" href="#modalAssignmentRunning">
+                       <span class="showcase-content">Auftrag <?php echo $i + 1; ?>
+                       </span>
+                      </a>
+                    </div>
+                  </div>
+
+                 <?php
+                 }
+                 ?>
                 <div class="col s3">
                   <div class="assignment">
                     <a class="modal-trigger" href="#modalAssignmentRunning">
@@ -260,7 +281,6 @@ require_once '../../../Model/Database_Operations.php';
                        <form>
                          <div class="row">
                            <div class="col s3">
-
                            </div>
                            <div class="col s9">
                              <span>Persönliche Daten des Auftraggebers</span>
@@ -269,11 +289,11 @@ require_once '../../../Model/Database_Operations.php';
                          <div class="row">
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="assignment_title" type="text" class="validate" name="assignment_title">
+                              <input id="assignment_title" type="text" class="validate" name="assignment_title" value="<?php echo htmlspecialchars($assignment_name); ?>">
                               <label for="assignment_title">Titel</label>
                             </div>
                             <div class="input-field">
-                              <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc"></textarea>
+                              <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc); ?>"></textarea>
                               <label for="assignment_desc">Beschreibung</label>
                             </div>
                             <p>
@@ -293,11 +313,11 @@ require_once '../../../Model/Database_Operations.php';
                           </div>
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="first-name" type="text" class="validate" name="first-name">
+                              <input id="first-name" type="text" class="validate" name="first-name" value="<?php echo htmlspecialchars($firstname); ?>">
                               <label for="first-name">Vorname</label>
                             </div>
                             <div class="input-field">
-                              <input id="last-name" type="text" class="validate" name="last-name">
+                              <input id="last-name" type="text" class="validate" name="last-name" value="<?php echo htmlspecialchars($lastname); ?>">
                               <label for="last-name">Nachname</label>
                             </div>
                             <p>
@@ -314,49 +334,49 @@ require_once '../../../Model/Database_Operations.php';
                                 </p>
                           <break>
                           <p>Geburtstag</p>
-                          <input type="date" class="datepicker" name="date"/>
+                          <input type="date" class="datepicker" name="date" value="<?php echo htmlspecialchars($date); ?>"/>
                           <div class="input-field">
-                            <input id="company" type="text" class="validate" name="company">
+                            <input id="company" type="text" class="validate" name="company" value="<?php echo htmlspecialchars($company); ?>">
                             <label for="company">Firma/Unternehmen</label>
                           </div>
                           <div class="input-field">
-                            <textarea id="description" class="materialize-textarea" name="short-description"></textarea>
+                            <textarea id="description" class="materialize-textarea" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></textarea>
                             <label for="description">Kurze Selbstbeschreibung</label>
                           </div>
                           </div>
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="street" type="text" class="validate" name="street">
+                              <input id="street" type="text" class="validate" name="street" value="<?php echo htmlspecialchars($street); ?>">
                               <label for="street">Straße</label>
                             </div>
                             <div class="input-field">
-                              <input id="number" type="text" class="validate" name="number">
+                              <input id="number" type="text" class="validate" name="number" value="<?php echo htmlspecialchars($number); ?>">
                               <label for="number">Hausnummer</label>
                             </div>
                             <div class="input-field">
-                              <input id="postalcode" type="text" class="validate" name="postalcode">
+                              <input id="postalcode" type="text" class="validate" name="postalcode" value="<?php echo htmlspecialchars($postalcode); ?>">
                               <label for="postalcode">Postleitzahl</label>
                             </div>
                             <div class="input-field">
-                              <input id="city" type="text" class="validate" name="city">
+                              <input id="city" type="text" class="validate" name="city" value="<?php echo htmlspecialchars($city); ?>">
                               <label for="city">Ort</label>
                             </div>
                             <div class="input-field">
-                              <input id="country" type="text" class="validate" name="country">
+                              <input id="country" type="text" class="validate" name="country" value="<?php echo htmlspecialchars($country); ?>">
                               <label for="country">Land</label>
                             </div>
                           </div>
                           <div class="col s3 final">
                             <div class="input-field">
-                              <input id="homepage" type="text" class="validate" name="homepage">
+                              <input id="homepage" type="text" class="validate" name="homepage" value="<?php echo htmlspecialchars($homepage); ?>">
                               <label for="homepage">Homepage</label>
                             </div>
                             <div class="input-field">
-                              <input id="telephone" type="text" class="validate" name="telephone">
+                              <input id="telephone" type="text" class="validate" name="telephone" value="<?php echo htmlspecialchars($telephone); ?>">
                               <label for="telephone">Telefonnummer</label>
                             </div>
                             <div class="input-field">
-                              <input id="fax" type="text" class="validate" name="fax">
+                              <input id="fax" type="text" class="validate" name="fax" value="<?php echo htmlspecialchars($fax); ?>">
                               <label for="fax">Fax</label>
                             </div>
                           </div>
@@ -386,11 +406,11 @@ require_once '../../../Model/Database_Operations.php';
                          <div class="row">
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="assignment_title" type="text" class="validate" name="assignment_title">
+                              <input id="assignment_title" type="text" class="validate" name="assignment_title" value="<?php echo htmlspecialchars($assignment_name); ?>">
                               <label for="assignment_title">Titel</label>
                             </div>
                             <div class="input-field">
-                              <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc"></textarea>
+                              <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc); ?>"></textarea>
                               <label for="assignment_desc">Beschreibung</label>
                             </div>
                             <p>
@@ -406,7 +426,7 @@ require_once '../../../Model/Database_Operations.php';
                                  </label>
                             </p>
                             <span>Auftraggeber per E-Mail kontaktieren</span>
-                            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href='mailto:webmaster1@nerdmania.at'">E-Mail</button>
+                            <button class="btn waves-effect waves-light sendEmail" id="sendEmail" name="sendEmail" onclick="location.href=' value="<?php echo htmlspecialchars($email); ?>"'">E-Mail</button>
                           </div>
                           <div class="col s3">
                             <div class="input-field">
@@ -414,7 +434,7 @@ require_once '../../../Model/Database_Operations.php';
                               <label for="first-name">Vorname</label>
                             </div>
                             <div class="input-field">
-                              <input id="last-name" type="text" class="validate" name="last-name">
+                              <input id="last-name" type="text" class="validate" name="last-name" value="<?php echo htmlspecialchars($lastname); ?>">
                               <label for="last-name">Nachname</label>
                             </div>
                             <p>
@@ -431,49 +451,49 @@ require_once '../../../Model/Database_Operations.php';
                                 </p>
                           <break>
                           <p>Geburtstag</p>
-                          <input type="date" class="datepicker" name="date"/>
+                          <input type="date" class="datepicker" name="date" value="<?php echo htmlspecialchars($date); ?>"/>
                           <div class="input-field">
-                            <input id="company" type="text" class="validate" name="company">
+                            <input id="company" type="text" class="validate" name="company" value="<?php echo htmlspecialchars($company); ?>">
                             <label for="company">Firma/Unternehmen</label>
                           </div>
                           <div class="input-field">
-                            <textarea id="description" class="materialize-textarea" name="short-description"></textarea>
+                            <textarea id="description" class="materialize-textarea" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></textarea>
                             <label for="description">Kurze Selbstbeschreibung</label>
                           </div>
                           </div>
                           <div class="col s3">
                             <div class="input-field">
-                              <input id="street" type="text" class="validate" name="street">
+                              <input id="street" type="text" class="validate" name="street" value="<?php echo htmlspecialchars($street); ?>">
                               <label for="street">Straße</label>
                             </div>
                             <div class="input-field">
-                              <input id="number" type="text" class="validate" name="number">
+                              <input id="number" type="text" class="validate" name="number" value="<?php echo htmlspecialchars($number); ?>">
                               <label for="number">Hausnummer</label>
                             </div>
                             <div class="input-field">
-                              <input id="postalcode" type="text" class="validate" name="postalcode">
+                              <input id="postalcode" type="text" class="validate" name="postalcode" value="<?php echo htmlspecialchars($postalcode); ?>">
                               <label for="postalcode">Postleitzahl</label>
                             </div>
                             <div class="input-field">
-                              <input id="city" type="text" class="validate" name="city">
+                              <input id="city" type="text" class="validate" name="city" value="<?php echo htmlspecialchars($city); ?>">
                               <label for="city">Ort</label>
                             </div>
                             <div class="input-field">
-                              <input id="country" type="text" class="validate" name="country">
+                              <input id="country" type="text" class="validate" name="country" value="<?php echo htmlspecialchars($country); ?>">
                               <label for="country">Land</label>
                             </div>
                           </div>
                           <div class="col s3 final">
                             <div class="input-field">
-                              <input id="homepage" type="text" class="validate" name="homepage">
+                              <input id="homepage" type="text" class="validate" name="homepage" value="<?php echo htmlspecialchars($homepage); ?>">
                               <label for="homepage">Homepage</label>
                             </div>
                             <div class="input-field">
-                              <input id="telephone" type="text" class="validate" name="telephone">
+                              <input id="telephone" type="text" class="validate" name="telephone" value="<?php echo htmlspecialchars($telephone); ?>">
                               <label for="telephone">Telefonnummer</label>
                             </div>
                             <div class="input-field">
-                              <input id="fax" type="text" class="validate" name="fax">
+                              <input id="fax" type="text" class="validate" name="fax" value="<?php echo htmlspecialchars($fax); ?>">
                               <label for="fax">Fax</label>
                             </div>
                           </div>

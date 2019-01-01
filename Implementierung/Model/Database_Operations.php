@@ -67,7 +67,7 @@ error_reporting(E_ALL);
 
     function getUserAddressByUsername($username)
     {
-      $sql = "Select a From Benutzer b JOIN Addresse a using(Adresse_Id) where b.Benutzername = '$username'";
+      $sql = "Select * From Adresse a JOIN Benutzer b using(Adresse_Id) where b.Benutzername = '$username'";
       return $sql;
     }
 
@@ -86,6 +86,12 @@ error_reporting(E_ALL);
     function countAllAssignments()
     {
       $sql = "Select count(*) From Auftraege";
+      return $sql;
+    }
+
+    function getUserByAssignmentId($id)
+    {
+      $sql = "Select * From Benutzer b JOIN Auftraege a using(Auftrag_Id) where b.Auftrag_Id = '$id'";
       return $sql;
     }
 
