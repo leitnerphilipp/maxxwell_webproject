@@ -16,6 +16,7 @@ foreach ($query3 as $row) {
   $username       = $row['Benutzername'];
 }
 
+
 $query4 = $pdo->query(getUserAddressByUsername($username));
 
 foreach ($query4 as $row) {
