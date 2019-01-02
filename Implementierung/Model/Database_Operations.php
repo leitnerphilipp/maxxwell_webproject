@@ -77,6 +77,18 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function getAssignmentById($id)
+    {
+      $sql = "Select * FROM Auftraege where Auftrag_Id = '$id'";
+      return $sql;
+    }
+
+    function getAssignmentsByStatus($status)
+    {
+      $sql = "Select * FROM Auftraege where Status = '$status'";
+      return $sql;
+    }
+
     function getAllAssignments()
     {
       $sql = "Select * From Auftraege";
@@ -89,9 +101,21 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function countAssignmentsByStatus($status)
+    {
+      $sql = "Select count(*) FROM Auftraege where Status = '$status'";
+      return $sql;
+    }
+
     function getUserByAssignmentId($id)
     {
       $sql = "Select * From Benutzer b JOIN Auftraege a using(Auftrag_Id) where b.Auftrag_Id = '$id'";
+      return $sql;
+    }
+
+    function getAssignmentByTitle($title)
+    {
+      $sql = "Select * From Auftraege where Name = '$title'";
       return $sql;
     }
 
@@ -149,10 +173,22 @@ error_reporting(E_ALL);
     return $sql;
   }
 
+  function update_assignment_status_by_id($id, $status)
+  {
+    $sql = "UPDATE Auftraege a set a.Status = '$status' where a.Auftrag_Id = '$id'";
+    return $sql;
+  }
+
 
   function deleteUserByUsername($username)
   {
     $sql = "DELETE Benutzer b where b.Benutzername = '$username'";
+    return $sql;
+  }
+
+  function deleteAssignmentById($id)
+  {
+    $sql = "DELETE Auftraege a where a.Auftrag_Id = '$id'";
     return $sql;
   }
 
