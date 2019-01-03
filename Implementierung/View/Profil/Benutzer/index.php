@@ -1,8 +1,24 @@
 <?php
  session_start();
+
+ require_once '../../../Model/Database_Operations.php';
+
  if (!isset($_SESSION['name'])) {
   die('<script>alert("Bitte zuerst einloggen!");</script>');
-} ?>
+}
+$assignmentsquery = $pdo->prepare(getAssignmentStatusByUsername($_SESSION['name']));
+$assignmentsquery->execute();
+$assignments = $assignmentsquery->fetchAll();
+
+if ($assignments == null) {
+  $assignment_status = "Kein Auftrag";
+}
+
+foreach ($assignments as $row) {
+  $assignment_status = $row['Status'];
+}
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -172,7 +188,7 @@
          <li>
            <div class="collapsible-header"><i class="material-icons">assignment</i>Aufträge</div>
            <div class="collapsible-body">
-             <span>Auftragsstatus: <span id="currentState"></span> </span>
+             <span>Auftragsstatus: <span id="currentState"><?php echo htmlspecialchars($assignment_status); ?></span> </span>
 
              <a class="waves-effect waves-light btn modal-trigger" href="#modalCreate">Erstellen</a>
 

@@ -71,9 +71,9 @@ error_reporting(E_ALL);
       return $sql;
     }
 
-    function getUserAssignmentsByUsername($username)
+    function getAssignmentStatusByUsername($username)
     {
-      $sql = "Select a From Benutzer b JOIN Auftraege a using(Auftrag_Id) where b.Benutzername = '$username'";
+      $sql = "Select a.Status From Auftraege a JOIN Benutzer b using(Auftrag_Id) where b.Benutzername = '$username'";
       return $sql;
     }
 
