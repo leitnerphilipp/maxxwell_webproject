@@ -9,14 +9,26 @@ if (isset($_POST['action11'])) {//create
     //header('Location: ../View/Profil/Administrator/index.php');
   }
   else {
-    $selected_val = $_POST['opt_assignment_new'];
-    $query11 = $pdo->prepare(getAssignmentById($selected_val));
-    $query11->execute();
-    $selected_assignment = $query11->fetchAll();
-    print_r($selected_assignment);
+    $query10 = $pdo->prepare(countAllShowcases());
+    $query10->execute();
+    $countShowcases = $query10->fetch();
+    if ($countShowcases['count(*)'] >= 4) {
+      echo "'<script>alert('Zu viele Showcases! Bitte zuerst eines löschen!');</script>'";
+    }
+    else {
+      $selected_val = $_POST['opt_assignment_new'];
+      $query11 = $pdo->prepare(getAssignmentById($selected_val));
+      $query11->execute();
+      $selected_assignment = $query11->fetchAll();
+      print_r($selected_assignment);
 
-    $selected_details = $_POST['user_details_new'];
-    echo $selected_details;
+      $selected_details = $_POST['user_details_new'];
+      echo $selected_details;
+      echo $selected_val;
+
+      $query12 = $pdo->prepare(insert_new_showcase($selected_val, $selected_details));
+      $query12->execute();
+    }
   }
 
 }
@@ -35,6 +47,25 @@ if (isset($_POST['action12'])) {//edit
 
     $selected_details = $_POST['user_details_edit'];
     echo $selected_details;
+
+    $query12 = $pdo->prepare(getShowcaseByAssignmentId($selected_val));
+    $query12->execute();
+    $selected_showcase = $query12->fetchAll();
+
+    if (($selected_showcase == null) or (empty($selected_showcase))) {
+      echo "'<script>alert('Kein Showcase zu diesem Auftrag gefunden, bitte zuerst eines erstellen!');</script>'";
+    }
+    else {
+      foreach ($selected_showcase as $row) {
+        $showcase_id = $row['Showcase_Id'];
+      }
+
+      $query13 = $pdo->prepare(update_showcase_by_id($showcase_id, $selected_val, $selected_details));
+      $query13->execute();
+    }
+
+
+
   }
 }
 
@@ -49,6 +80,10 @@ if (isset($_POST['action13'])) {//delete
     $query11->execute();
     $selected_assignment = $query11->fetchAll();
     print_r($selected_assignment);
+    try{
+    $query12 = $pdo->prepare(deleteShowcaseByAssignmentId($selected_val));
+    $query12->execute();
+    }catch(PDOException $e) {echo "'<script>alert('Dieses Showcase existiert nicht!');</script>'";}
   }
 }
 

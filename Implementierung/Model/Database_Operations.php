@@ -119,6 +119,24 @@ error_reporting(E_ALL);
       return $sql;
     }
 
+    function getShowcaseByAssignmentId($id)
+    {
+      $sql = "Select * From Showcases where Auftrag_Id = '$id'";
+      return $sql;
+    }
+
+    function getAllShowcases()
+    {
+      $sql = "Select * From Showcases";
+      return $sql;
+    }
+
+    function countAllShowcases()
+    {
+      $sql = "Select count(*) From Showcases";
+      return $sql;
+    }
+
   function insert_new_user($username, $password, $email, $registerdate, $status)
   {
     $sql = "INSERT INTO Benutzer(Benutzername, Passwort, EMailAdresse, Vorname, Nachname, Geschlecht, Geburtsdatum, Firma, Selbstbeschreibung, Homepage, Telefonnummer, Fax, Letzteanmeldung, Registrierungsdatum, Status, Auftrag_Id, Adresse_Id) VALUES('$username', '$password', '$email', null, null, null, null, null, null, null, null, null, null, '$registerdate', '$status', null, null)";
@@ -140,6 +158,12 @@ error_reporting(E_ALL);
   function insert_new_address($street, $housenr, $post, $city, $country)
   {
     $sql = "INSERT INTO Adresse(Strasse, Hausnummer, Postleitzahl, Ort, Land) VALUES('$street', '$housenr', '$post', '$city', '$country')";
+    return $sql;
+  }
+
+  function insert_new_showcase($assignment_id, $details)
+  {
+    $sql = "INSERT INTO Showcases(Auftrag_Id, Details) VALUES('$assignment_id', '$details')";
     return $sql;
   }
 
@@ -179,19 +203,29 @@ error_reporting(E_ALL);
     return $sql;
   }
 
+  function update_showcase_by_id($id, $assignment_id, $details)
+  {
+    $sql = "UPDATE Showcases s set s.Details = '$details' where s.Showcase_Id = '$id'";
+    return $sql;
+  }
 
   function deleteUserByUsername($username)
   {
-    $sql = "DELETE Benutzer b where b.Benutzername = '$username'";
+    $sql = "DELETE FROM Benutzer where Benutzername = '$username'";
     return $sql;
   }
 
   function deleteAssignmentById($id)
   {
-    $sql = "DELETE Auftraege a where a.Auftrag_Id = '$id'";
+    $sql = "DELETE FROM Auftraege where Auftrag_Id = '$id'";
     return $sql;
   }
 
+  function deleteShowcaseByAssignmentId($id)
+  {
+    $sql = "DELETE FROM Showcases where Auftrag_Id = '$id'";
+    return $sql;
+  }
 
 
   function execute($sql)

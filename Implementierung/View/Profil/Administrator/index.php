@@ -50,7 +50,7 @@
 
     <div class="wrapper">
 
-      <form  action="../../../Controller/AdminControlShowcases.php" method="post">
+
       <div class="profilcontainer">
 
       <ul class="collapsible">
@@ -395,7 +395,7 @@
 
 
 
-
+                  <form  action="../../../Controller/AdminControlShowcases.php" method="post">
                    <div id="modalShowcaseAdd" class="modal">
                      <div class="modal-content">
                        <h4>Auftrag auswählen</h4>
@@ -404,7 +404,7 @@
                        <div class="input-field col s4">
                          <select name="opt_assignment_new">
                            <option value="?" disabled selected>Aufträge</option>
-                           <?php for ($i=0; $i < $AssignmentsCount['count(*)']; $i++) { ?>
+                           <?php for ($i=0; $i < $countallAssignments['count(*)']; $i++) { ?>
                            <option value="<?php echo $assignment_id[$i];?>">Auftrag <?php echo $i + 1;?></option>
                            <?php } ?>
                          </select>
@@ -437,8 +437,7 @@
                        <div class="row">
                        <div class="input-field col s4">
                          <select name="opt_assignment_edit">
-                           <option value="?" disabled selected>Aufträge</option>
-                           <?php for ($i=0; $i < $AssignmentsCount['count(*)']; $i++) { ?>
+                           <?php for ($i=0; $i < $countallAssignments['count(*)']; $i++) { ?>
                            <option value="<?php echo $assignment_id[$i];?>">Auftrag <?php echo $i + 1;?></option>
                            <?php } ?>
                          </select>
