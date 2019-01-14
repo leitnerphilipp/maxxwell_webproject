@@ -2,6 +2,7 @@
  session_start();
 
  require_once '../../../Model/Database_Operations.php';
+ require_once '../../../Controller/UserInfos.php';
 
  if (!isset($_SESSION['name'])) {
   die('<script>alert("Bitte zuerst einloggen!");</script>');
@@ -62,11 +63,11 @@ foreach ($assignments as $row) {
            <div class="row">
             <div class="col s4">
               <div class="input-field">
-                <input id="first-name" type="text" class="validate" name="first-name">
+                <input id="first-name" type="text" class="validate" name="first-name" value="<?php echo htmlspecialchars($firstname); ?>">
                 <label for="first-name">Vorname</label>
               </div>
               <div class="input-field">
-                <input id="last-name" type="text" class="validate" name="last-name">
+                <input id="last-name" type="text" class="validate" name="last-name" value="<?php echo htmlspecialchars($lastname); ?>">
                 <label for="last-name">Nachname</label>
               </div>
               <p>
@@ -83,49 +84,49 @@ foreach ($assignments as $row) {
                   </p>
             <break>
             <p>Geburtstag</p>
-            <input type="date" class="datepicker" name="date"/>
+            <input type="date" class="datepicker" name="date" value="<?php echo htmlspecialchars($date); ?>"/>
             <div class="input-field">
-              <input id="company" type="text" class="validate" name="company">
+              <input id="company" type="text" class="validate" name="company" value="<?php echo htmlspecialchars($company); ?>">
               <label for="company">Firma/Unternehmen</label>
             </div>
             <div class="input-field">
-              <textarea id="description" class="materialize-textarea" name="short-description"></textarea>
+              <textarea id="description" class="materialize-textarea" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></textarea>
               <label for="description">Kurze Selbstbeschreibung</label>
             </div>
             </div>
             <div class="col s4">
               <div class="input-field">
-                <input id="street" type="text" class="validate" name="street">
+                <input id="street" type="text" class="validate" name="street" value="<?php echo htmlspecialchars($street); ?>">
                 <label for="street">Straße</label>
               </div>
               <div class="input-field">
-                <input id="number" type="text" class="validate" name="number">
+                <input id="number" type="text" class="validate" name="number" value="<?php echo htmlspecialchars($number); ?>">
                 <label for="number">Hausnummer</label>
               </div>
               <div class="input-field">
-                <input id="postalcode" type="text" class="validate" name="postalcode">
+                <input id="postalcode" type="text" class="validate" name="postalcode" value="<?php echo htmlspecialchars($postalcode); ?>">
                 <label for="postalcode">Postleitzahl</label>
               </div>
               <div class="input-field">
-                <input id="city" type="text" class="validate" name="city">
+                <input id="city" type="text" class="validate" name="city" value="<?php echo htmlspecialchars($city); ?>">
                 <label for="city">Ort</label>
               </div>
               <div class="input-field">
-                <input id="country" type="text" class="validate" name="country">
+                <input id="country" type="text" class="validate" name="country" value="<?php echo htmlspecialchars($country); ?>">
                 <label for="country">Land</label>
               </div>
             </div>
             <div class="col s4 final">
               <div class="input-field">
-                <input id="homepage" type="text" class="validate" name="homepage">
+                <input id="homepage" type="text" class="validate" name="homepage" value="<?php echo htmlspecialchars($homepage); ?>">
                 <label for="homepage">Homepage</label>
               </div>
               <div class="input-field">
-                <input id="telephone" type="text" class="validate" name="telephone">
+                <input id="telephone" type="text" class="validate" name="telephone" value="<?php echo htmlspecialchars($telephone); ?>">
                 <label for="telephone">Telefonnummer</label>
               </div>
               <div class="input-field">
-                <input id="fax" type="text" class="validate" name="fax">
+                <input id="fax" type="text" class="validate" name="fax" value="<?php echo htmlspecialchars($fax); ?>">
                 <label for="fax">Fax</label>
                 <button class="btn waves-effect waves-light savePersonal" id="savePersonal" type="submit" name="action1">Speichern
                 </button>

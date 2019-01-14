@@ -1,3 +1,10 @@
+<?php
+
+  require_once '../../../Model/Database_Operations.php';
+  require_once '../../../Controller/MainShowcases.php';
+
+ ?>
+
 <!DOCTYPE html>
 <html>
   <head>
