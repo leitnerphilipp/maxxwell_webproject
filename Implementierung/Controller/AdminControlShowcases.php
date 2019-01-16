@@ -52,7 +52,7 @@ if (isset($_POST['action12'])) {//edit
     $query12->execute();
     $selected_showcase = $query12->fetchAll();
 
-    if (($selected_showcase == null) or (empty($selected_showcase))) {
+    if ($selected_showcase == null) {
       echo "'<script>alert('Kein Showcase zu diesem Auftrag gefunden, bitte zuerst eines erstellen!');</script>'";
     }
     else {
