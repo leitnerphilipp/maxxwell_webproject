@@ -12,7 +12,12 @@ else {
   $query2 = $pdo->prepare(getAllShowcases());
   $query2->execute();
   $res2 = $query2->fetchAll();
-  
+
+  foreach ($res2 as $row) {
+    $showcase_assignment_id[] = $row["Auftrag_Id"];
+    $details[] = $row["Details"];
+  }
+
 }
 
 

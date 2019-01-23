@@ -1,7 +1,7 @@
 <?php
 
-  require_once '../../../Model/Database_Operations.php';
-  require_once '../../../Controller/MainShowcases.php';
+  require_once '../../Model/Database_Operations.php';
+  require_once '../../Controller/MainShowcases.php';
 
  ?>
 
@@ -39,26 +39,22 @@
       <div id="main-container">
       <img id="main-logo" src="https://via.placeholder.com/150"></img>
       <div class="row">
+        <?php for($i = 0; $i < $res1['count(*)']; $i++)
+        {
+        $id = $showcase_assignment_id[$i];
+        $det = $details[$i];
+        include '../../Controller/GetShowcases.php';
+        ?>
         <div class="col s3">
         <div class="showcase">
-           <span class="showcase-content">Showcase 1</span>
+           <span class="showcase-content">Showcase <?php echo $i ?></span>
+           <span class="showcase-content"><?php echo $l_name ?></span>
+           <span class="showcase-content"><?php echo $l_desc ?></span>
+           <span class="showcase-content"><?php echo $l_email ?></span>
+           <span class="showcase-content"><?php echo $l_homepage ?></span>
         </div>
       </div>
-        <div class="col s3">
-        <div class="showcase">
-           <span class="showcase-content">Showcase 2</span>
-        </div>
-      </div>
-        <div class="col s3">
-        <div class="showcase">
-           <span class="showcase-content">Showcase 3</span>
-        </div>
-      </div>
-        <div class="col s3">
-        <div class="showcase">
-           <span class="showcase-content">Showcase 4</span>
-        </div>
-      </div>
+    <?php } ?>
       </div>
     </div>
 
