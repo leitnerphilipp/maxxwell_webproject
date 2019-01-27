@@ -15,10 +15,11 @@ margin-top: 5%;
 .showcase {
   text-align: center;
   height: 100%;
-
 }
 
 .showcase-content{
   text-decoration: none;
   color: black;
+	display:table;
+	margin:0 auto;
 }
