@@ -41,7 +41,7 @@ foreach ($assignments as $row) {
 
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left">Logo</a>
+        <a href="#" class="brand-logo left">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="../main/index.html">Start</a></li>
           <li><a href="../.html">Kontakt</a></li>

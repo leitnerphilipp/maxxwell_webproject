@@ -25,7 +25,7 @@
 
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left">Logo</a>
+        <a href="#" class="brand-logo left">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a href="../main/index.html">Start</a></li>
           <li><a href="../.html">Kontakt</a></li>
@@ -37,7 +37,7 @@
 
     <div class="wrapper">
       <div id="main-container">
-      <img id="main-logo" src="https://via.placeholder.com/150"></img>
+      <img id="main-logo" src="../../Ressourcen/logo.png"></img>
       <div class="row">
         <?php for($i = 0; $i < $res1['count(*)']; $i++)
         {
