@@ -10,7 +10,6 @@
 
   //try {
    $pdo = new PDO('mysql:host=127.0.0.1;dbname=DIPLDB', $username, $password);
-   echo "Database connected.";
 /*} catch (PDOException $e) {
    print "Error!: " . $e->getMessage() . "<br/>";
    die();

@@ -8,15 +8,6 @@ error_reporting(E_ALL);
 
   $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-  function test()
-  {
-      echo "Operations On.";
-  }
-
-    test();
-
-
-
     function getUserById($id)
     {
       $sql = "Select * From Benutzer where Benutzer_Id = '$id'";
