@@ -18,19 +18,19 @@
 
     <nav>
       <div class="nav-wrapper">
-        <a href="#" class="brand-logo left">Maxxwell Computers</a>
+        <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a href="../main/index.html">Start</a></li>
-          <li><a href="../.html">Kontakt</a></li>
-          <li><a href="collapsible.html">Login</a></li>
-          <li><a href="collapsible.html">Registrieren</a></li>
+          <li><a class="text-element" href="../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+          <li><a class="text-element" href="../login/index.php">Login</a></li>
+          <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="wrapper">
       <div id="login-container">
-      <img id="login-logo" src="../../Ressourcen/logo.png"></img>
+        <img id="login-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
       <div class="row">
 
         <form class="col s12" action="../../Controller/Register.php" method="post">
@@ -72,8 +72,8 @@
                 </label>
               </p>
             </div>
-            <div class="col s6 registerBTN">
-              <button class="btn waves-effect waves-light disabled" id="buttonSend" type="submit" name="action">Registrieren
+            <div class="col s6">
+              <button class="btn registerBTN waves-effect waves-light disabled" id="buttonSend" type="submit" name="action">Registrieren
                 <i class="material-icons right">send</i>
               </button>
             </div>

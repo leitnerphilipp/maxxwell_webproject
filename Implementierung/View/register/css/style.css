@@ -30,3 +30,43 @@ margin-top: 5%;
 	margin-left: auto;
 	text-align: center;
 }
+
+.nav-wrapper {
+	background-color: #000000;
+	color: #FF0998;
+}
+
+.text-element{
+	color: #FF0988;
+}
+
+.brand-logo.text-element {
+	color: #FF0998;
+}
+
+.active {
+
+	color: #FF0998 !important;
+}
+
+.registerBTN{
+	display: block;
+	margin: auto;
+	text-align: center;
+	background-color: #FF0988;
+}
+
+.registerBTN:hover{
+	background-color: #FF0988;
+}
+
+/* label wenn fokussiert */
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+ color: #FF0988 !important;
+}
+
+/* label border wenn fokussiert */
+    .input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #FF0988 !important;
+     box-shadow: 0 1px 0 0 #FF0988 !important;
+    }

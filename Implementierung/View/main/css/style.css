@@ -7,9 +7,9 @@ margin-top: 5%;
 }
 
 #main-logo {
-	display:block;
-	margin:auto;
-	margin-left: auto;
+	display: block;
+margin-left: auto;
+margin-right: auto;
 }
 
 .showcase {
@@ -22,4 +22,17 @@ margin-top: 5%;
   color: black;
 	display:table;
 	margin:0 auto;
+}
+
+.nav-wrapper {
+	background-color: #000000;
+	color: #FF0998;
+}
+
+.text-element{
+	color: #FF0988;
+}
+
+.brand-logo.text-element {
+	color: #FF0998;
 }

@@ -22,7 +22,7 @@
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="text-element" href="../main/index.php">Start</a></li>
           <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
-          <li><a class="text-element" href="../login/index.php">Login</a></li>
+          <li><a class="active text-element" href="../login/index.php">Login</a></li>
           <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
         </ul>
       </div>
