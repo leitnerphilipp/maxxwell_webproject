@@ -20,51 +20,36 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo left text-element">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="text-element" href="../main/index.php">Start</a></li>
-          <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
-          <li><a class="active text-element" href="../login/index.php">Login</a></li>
-          <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
+          <li><a class="text-element" href="../../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
+          <li><a class="active text-element" href="../../login/index.php">Login</a></li>
+          <li><a class="text-element" href="../../register/index.php">Registrieren</a></li>
         </ul>
       </div>
     </nav>
 
     <div class="wrapper">
       <div id="login-container">
-      <img id="login-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
-      <div class="row">
-
-        <form class="col s12" method="post" action="../../Controller/Login.php">
-          <div class="row">
+      <img id="login-logo" src="../../img/logo/logo.png" alt="logo" width="150" height="150"></img>
+      <h2>Passwort vergessen</h2>
+        <form class="col s12" method="post" action="">
+          <div class="row rowReset">
             <div class="input-field col s12">
               <input id="username" name="username" type="text" class="validate">
               <label for="username">E-mail oder Benutzername</label>
             </div>
           </div>
-          <div class="row">
-            <div class="input-field col s12">
-              <input id="password" name="password" type="password" class="validate">
-              <label for="password">Passwort</label>
-            </div>
-          </div>
 
           <div class="row">
-            <div class="col s6">
-              <div class="row forgotLink">
-              <a href="reset-password/index.php">Passwort vergessen?</a>
-            </div>
-            <div class="row registerLink">
-              <a href="../register/index.php">Noch nicht regestriert?</a>
-            </div>
-            </div>
-            <div class="col s6 buttonArea">
-              <button class="btn waves-effect waves-light loginBTN" id="buttonSend" type="submit" name="action">Login
+            <div class="col s12">
+              <p> Kennung per Email anfordern</p>
+              <button class="btn waves-effect waves-light sendBTN" id="buttonSend" type="submit" name="action">Senden
                 <i class="material-icons right">send</i>
               </button>
             </div>
         </div>
 
-        </form>
-      </div>
+      </form>
     </div>
 
   </body>

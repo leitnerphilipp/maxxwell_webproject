@@ -1,3 +1,7 @@
+$(document).ready(function(){
+  $('#modalAGB').modal();
+});
+
 console.log("ht");
   function validatePasswords()
  {
