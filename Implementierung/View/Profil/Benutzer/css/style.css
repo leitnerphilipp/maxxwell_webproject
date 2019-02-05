@@ -1,0 +1,37 @@
+
+.profilcontainer {
+width: 60%;
+background-color: #f5f5f5;
+display: block;
+margin: auto;
+margin-top: 5%;
+}
+
+.savePersonal{
+  float: right;
+  bottom: 10px;
+  margin-top: 70%;
+}
+
+.deleteAccount {
+  float: right;
+  margin-top: 80%;
+}
+
+.createAssignment{
+  float: right;
+  margin-bottom: 2%;
+}
+
+.nav-wrapper {
+	background-color: #000000;
+	color: #FF0998;
+}
+
+.text-element{
+	color: #FF0988;
+}
+
+.brand-logo.text-element {
+	color: #FF0998;
+}

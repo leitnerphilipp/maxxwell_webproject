@@ -10,7 +10,7 @@
   $res3 = $query->fetch();
 
   if ($res3['Status'] != null) {
-    echo "'<script>alert('Nur ein Auftrag pro Benutzer!');</script>'";
+    echo "'<script>alert('Nur ein Auftrag per Benutzer!');window.location.href = '../View/Profil/Benutzer/index.php';</script>'";
   }
   else {
     try
@@ -19,7 +19,7 @@
     }
     catch(PDOException $e)
     {
-      echo $e->getMessage();
+      echo "'<script>alert('Felder dürfen nicht leer sein!');window.location.href = '../View/Profil/Benutzer/index.php';</script>'";
     }
 
     $assignment_id = $pdo->prepare(getAssignmentId($name, $desc, $status, $createdate));
@@ -28,6 +28,8 @@
 
     $result7 = $pdo->prepare(update_user_assignment_by_username($_SESSION['name'], $ass_id['Auftrag_Id']));
     $result7->execute();
+    header('Location: ../View/Profil/Benutzer/index.php');
+
   }
 
 

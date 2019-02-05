@@ -9,10 +9,10 @@
 
       $result = $pdo->query(update_user_email_by_username($new_email, $_SESSION['name']));
 
-      header('Location: Logout.php');
+      echo "'<script>alert('Änderungen vorgenommen, Sie werden nun ausgeloggt!');window.location.href = 'Logout.php';</script>'";
   }
   else {
-      echo "'<script>alert('Passwort falsch!');</script>'";
+      echo "'<script>alert('E-Mail falsch!');window.location.href = '../View/Profil/Benutzer/index.php';</script>'";
   }
 
 

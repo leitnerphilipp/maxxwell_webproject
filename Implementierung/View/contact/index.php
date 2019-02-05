@@ -63,7 +63,9 @@ body { margin:0; padding:0; }
       </script>
     </div>
     <div id="contact-right">
-      <h4>Informationen blabla </h4>
+      <h3>Kontakt</h3>
+      <h4> Telefon </h4>
+      <p> +43 677 61796033<p>
       <h4> Adresse </h4>
       <p> Donaugasse 8<p>
       <p> A-3494 Theiß</p>

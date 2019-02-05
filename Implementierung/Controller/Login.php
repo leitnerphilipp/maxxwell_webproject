@@ -5,10 +5,10 @@ require_once '../Model/Database_Operations.php';
 
 if (isset($_POST['action'])) {
   if (empty($_POST['username'])) {
-    echo "ERROR";
+    echo "'<script>alert('Benutzername oder Email darf nicht leer sein!');window.location.href = '../View/login/index.php';</script>'";
   }
   if (empty($_POST['password'])) {
-    echo "ERROR";
+    echo "'<script>alert('Passwort darf nicht leer sein!');window.location.href = '../View/login/index.php';</script>'";
   }
   else {
 
@@ -24,7 +24,7 @@ if (isset($_POST['action'])) {
     }
 
     if ($exists == null) {
-      echo "'<script>alert('Benutzername oder Email existiert nicht!');</script>'";
+      echo "'<script>alert('Benutzername oder Email existiert nicht!');window.location.href = '../View/login/index.php';</script>'";
     }
     else {
       foreach ($exists as $row) {
@@ -43,7 +43,7 @@ if (isset($_POST['action'])) {
               }
 
         } else {
-            echo "'<script>alert('Passwort falsch!');</script>'";
+            echo "'<script>alert('Passwort falsch!');window.location.href = '../View/login/index.php';</script>'";
         }
       }
     }

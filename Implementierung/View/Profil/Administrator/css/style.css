@@ -1,0 +1,68 @@
+
+.profilcontainer {
+width: 60%;
+background-color: #f5f5f5;
+display: block;
+margin: auto;
+margin-top: 5%;
+}
+
+.nav-wrapper {
+	background-color: #000000;
+	color: #FF0998;
+}
+
+.text-element{
+	color: #FF0988;
+}
+
+.brand-logo.text-element {
+	color: #FF0998;
+}
+
+#addShowcase {
+  float: right;
+}
+
+.showcase {
+  background-color: white;
+  height: 100%;
+
+}
+
+.assignment {
+  background-color: white;
+  height: 100%;
+
+}
+
+#addShowcaseBTN {
+  float: right;
+  margin-bottom: 2%;
+}
+
+#deleteShowcaseBTN{
+  float: left;
+  margin-bottom: 2%;
+}
+
+.showcase-content{
+  text-decoration: none;
+  color: black;
+}
+
+.saveAssignmentBTN {
+  float: right;
+}
+
+
+.acceptAssignmentBTN {
+  float: right;
+  margin: 2%;
+}
+
+
+.declineAssignmentBTN {
+  float: right;
+  margin: 2%;
+}

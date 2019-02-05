@@ -4,6 +4,23 @@ $query1 = $pdo->query(getUserByUsername($_SESSION['name']));
 $query1->execute();
 $res1 = $query1->fetchAll();
 
+$firstname      = "";
+$lastname       = "";
+$gender         = "";
+$date           = "";
+$company        = "";
+$description    = "";
+$homepage       = "";
+$telephone      = "";
+$fax            = "";
+$email          = "";
+$username       = "";
+$street         = "";
+$number         = "";
+$postalcode     = "";
+$city           = "";
+$country        = "";
+
 foreach ($res1 as $row) {
   $firstname      = $row['Vorname'];
   $lastname       = $row['Nachname'];

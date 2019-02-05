@@ -27,7 +27,6 @@ if (isset($_POST['action1'])) {
   $ex = $pdo->prepare(getIdByUsername($_SESSION['name']));
   $ex->execute();
   $id = $ex->fetch();
-  echo "ID: ".$id['Benutzer_Id'];
 
 
   $result1 = $pdo->prepare(insert_user_data($id['Benutzer_Id'], $firstname, $lastname, $gender, $date, $company, $description, $homepage, $telephone, $fax, null));
@@ -44,7 +43,7 @@ if (isset($_POST['action1'])) {
   $result4 = $pdo->prepare(update_user_address_by_username($_SESSION['name'], $addr_id['Adresse_Id']));
   $result4->execute();
 
-
+  header("Location: ../View/Profil/Benutzer/index.php");
 }
 
 if (isset($_POST['action3'])) {

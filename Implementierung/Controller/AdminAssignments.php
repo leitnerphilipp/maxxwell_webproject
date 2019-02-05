@@ -2,6 +2,23 @@
 
 $query3 = $pdo->query(getUserByAssignmentId($id));
 
+$firstname      = "";
+$lastname       = "";
+$gender         = "";
+$date           = "";
+$company        = "";
+$description    = "";
+$homepage       = "";
+$telephone      = "";
+$fax            = "";
+$email          = "";
+$username       = "";
+$street         = "";
+$number         = "";
+$postalcode     = "";
+$city           = "";
+$country        = "";
+
 foreach ($query3 as $row) {
   $firstname      = $row['Vorname'];
   $lastname       = $row['Nachname'];
