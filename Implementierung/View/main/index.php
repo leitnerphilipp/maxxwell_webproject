@@ -41,7 +41,9 @@
         <img class="center" id="main-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
         <div class="row">
           <div id="description">
-            <p>Hier ist die beschreibung test test test test test test test test test test test test test test teset test test test</p>
+            <h3>IT-Dienstleistungen & Business Hardware nach Bedarf</h3>
+            <p>Maxxwell Computers bietet umfangreiche IT-Services und Leistungen an den Standorten Wien | Niederösterreich</p>
+            <p>Wir bieten leistbare Business Hardware für den reibungslosen Ablauf von Geschäftsprozessen. Kunden profitieren von unserer Stellung als TOP Partner aller Namhaften Hardwarehersteller</p>
           </div>
         </div>
         <div id="heading">
