@@ -38,7 +38,15 @@
 
     <div class="wrapper">
       <div id="main-container">
-        <img class="center" id="login-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
+        <img class="center" id="main-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
+        <div class="row">
+          <div id="description">
+            <p>Hier ist die beschreibung test test test test test test test test test test test test test test teset test test test</p>
+          </div>
+        </div>
+        <div id="heading">
+          <h4>Letzte Projekte</h4>
+        </div>
       <div class="row">
         <?php for($i = 0; $i < $res1['count(*)']; $i++)
         {

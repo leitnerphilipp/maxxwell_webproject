@@ -12,6 +12,15 @@ margin-left: auto;
 margin-right: auto;
 }
 
+#description {
+	padding: 2%;
+	text-align: center;
+}
+
+#heading {
+	text-align: center;
+}
+
 .showcase {
   text-align: center;
   height: 100%;
