@@ -40,9 +40,9 @@
       <div class="nav-wrapper">
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="text-element" href="../main/index.html">Start</a></li>
-          <li><a class="text-element" href="../.html">Kontakt</a></li>
-          <li class="active"><a class="text-element" href="collapsible.html">Profil</a></li>
+          <li><a class="text-element" href="../../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
+          <li class="active"><a class="text-element" href="">Profil</a></li>
           <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
         </ul>
       </div>

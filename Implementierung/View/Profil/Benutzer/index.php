@@ -43,9 +43,9 @@ foreach ($assignments as $row) {
       <div class="nav-wrapper">
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="text-element" href="../main/index.html">Start</a></li>
-          <li><a class="text-element" href="../.html">Kontakt</a></li>
-          <li class="active"><a class="text-element" href="#">Profil</a></li>
+          <li><a class="text-element" href="../../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
+          <li class="active"><a class="text-element" href="">Profil</a></li>
           <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
         </ul>
       </div>
@@ -142,7 +142,6 @@ foreach ($assignments as $row) {
                 <div class="row">
 
                   <div class="col s4">
-                    <form>
                   <div class="input-field">
                     <input id="old_psw" type="password" class="validate" name="old_psw">
                     <label for="old_psw">Altes Passwort</label>
@@ -157,7 +156,6 @@ foreach ($assignments as $row) {
                   </div>
                    <button class="btn waves-effect waves-light" id="changePassword" type="submit" name="action2">Passwort ändern
                    </button>
-                 </form>
                 </div>
                 <div class="col s4">
                     <div class="input-field">
@@ -176,10 +174,8 @@ foreach ($assignments as $row) {
                     </button>
                 </div>
                 <div class="col s4">
-                  <form>
                   <button class="btn waves-effect waves-light deleteAccount" id="deleteAccount" type="submit" name="action4">Account löschen
                   </button>
-                </form>
                 </div>
                 </div>
 
