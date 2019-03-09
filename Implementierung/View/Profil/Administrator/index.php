@@ -135,7 +135,7 @@
                              <label for="assignment_title">Titel</label>
                            </div>
                            <div class="input-field">
-                             <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc2[$i]); ?>"></textarea>
+                             <input id="assignment_desc" type="text" class="validate" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc2[$i]); ?>"></input>
                              <label for="assignment_desc">Beschreibung</label>
                            </div>
                            <p>
@@ -182,7 +182,7 @@
                            <label for="company">Firma/Unternehmen</label>
                          </div>
                          <div class="input-field">
-                           <textarea id="description" class="materialize-textarea" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></textarea>
+                           <input id="description" type="text" class="validate" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></input>
                            <label for="description">Kurze Selbstbeschreibung</label>
                          </div>
                          </div>
@@ -280,7 +280,7 @@
                             <label for="assignment_title">Titel</label>
                           </div>
                           <div class="input-field">
-                            <textarea id="assignment_desc" class="materialize-textarea" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc1[$i]); ?>"></textarea>
+                            <input id="assignment_desc" type="text" class="validate" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc1[$i]); ?>"></input>
                             <label for="assignment_desc">Beschreibung</label>
                           </div>
                           <p>
@@ -327,7 +327,7 @@
                           <label for="company">Firma/Unternehmen</label>
                         </div>
                         <div class="input-field">
-                          <textarea id="description" class="materialize-textarea" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></textarea>
+                          <input id="description" type="text" class="validate" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></input>
                           <label for="description">Kurze Selbstbeschreibung</label>
                         </div>
                         </div>

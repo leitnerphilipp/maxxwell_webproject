@@ -58,7 +58,6 @@
         ?>
         <div class="col s3">
         <div class="showcase">
-           <span class="showcase-content">Showcase <?php echo $i ?></span>
            <span class="showcase-content"><?php echo $l_name ?></span>
            <span class="showcase-content"><?php echo $l_desc ?></span>
            <span class="showcase-content"><?php echo $l_email ?></span>

@@ -27,8 +27,11 @@ h3,h4{
 
 .showcase {
   text-align: center;
-	width: 150px;
-	height: 100px;
+	border-width: 5px;
+	width: 70%;
+	margin: 8%;
+	border-style: inset;
+	border-color: #FF0988;
 }
 
 .showcase-content{

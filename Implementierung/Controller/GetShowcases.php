@@ -18,8 +18,8 @@ foreach ($var as $row) {
 
   if ($det == 1) {
     foreach ($user_details as $usr_row) {
-      $l_homepage = $row['Homepage'];
-      $l_email = $row['EMailAdresse'];
+      $l_homepage = $usr_row['Homepage'];
+      $l_email = $usr_row['EMailAdresse'];
     }
 
   }

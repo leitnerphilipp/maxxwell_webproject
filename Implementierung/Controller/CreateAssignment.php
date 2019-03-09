@@ -15,7 +15,8 @@
   else {
     try
     {
-    $res = $pdo->query(insert_new_assignment($name, $desc, $status, $createdate));
+    $res = $pdo->prepare(insert_new_assignment($name, $desc, $status, $createdate));
+    $res->execute();
     }
     catch(PDOException $e)
     {
