@@ -54,7 +54,7 @@ margin-top: 5%;
 }
 
 /* label focus color */
-.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+.input-field input:focus + label, .materialize-textarea:focus:not([readonly]) + label {
  color: #FF0988 !important;
 }
 
