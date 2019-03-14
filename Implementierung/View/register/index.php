@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
+    <title>Maxxwell - Registrieren</title>
+
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
   <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta charset="utf-8"/>
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+  <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 
   <script type="text/javascript" src="js/register.js"></script>
   </head>
@@ -19,6 +19,7 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
+        <a href="#" data-target="mobile-side" class="sidenav-trigger" style="float : right;"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="text-element" href="../main/index.php">Start</a></li>
           <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
@@ -28,6 +29,13 @@
       </div>
     </nav>
 
+    <ul class="sidenav" id="mobile-side" style="edge : right;">
+      <li><a class="text-element" href="../main/index.php">Start</a></li>
+      <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+      <li><a class="text-element" href="../login/index.php">Login</a></li>
+      <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
+    </ul>
+
     <div class="wrapper">
       <div id="login-container">
         <img id="login-logo" src="../img/logo/logo.png" alt="logo" width="150" height="150"></img>
@@ -36,25 +44,25 @@
         <form class="col s12" action="../../Controller/Register.php" method="post">
           <div class="row">
             <div class="input-field col s12">
-              <input id="username" type="text" class="validate" name="username">
+              <input id="username" type="text" class="validate" name="username" maxlength="45" pattern="[A-Za-z0-9]+" onkeyup="checkForm();" required>
               <label for="username">Benutzername</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="email" type="email" class="validate" name="email">
+              <input id="email" type="email" class="validate" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" onchange="checkForm();" required>
               <label for="email">E-mail</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password1" type="password" class="validate" name="password1">
+              <input id="password1" type="password" class="validate" name="password1" pattern="[^'\x22]+" onkeyup="validatePasswords(); return false;" required>
               <label for="password1">Passwort</label>
             </div>
           </div>
           <div class="row">
             <div class="input-field col s12">
-              <input id="password2" type="password" class="validate" onkeyup="validatePasswords(); return false;" name="password2">
+              <input id="password2" type="password" class="validate" name="password2" pattern="[^'\x22]+" onkeyup="validatePasswords(); return false;" required>
               <label for="password2">Passwort wiederholen</label>
             </div>
           </div>
@@ -67,7 +75,7 @@
             <div class="col s6 acceptAGB">
               <p>
                 <label>
-                  <input id="indeterminate-checkbox" type="checkbox"/>
+                  <input id="indeterminate-checkbox" type="checkbox" required onclick="checkForm();"/>
                   <span><a class="modal-trigger" href="#modalAGB">AGBs </a>aktzeptieren</span>
                 </label>
               </p>

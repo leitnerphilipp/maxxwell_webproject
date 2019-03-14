@@ -8,17 +8,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
+    <title>Maxxwell - Startseite</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-  <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="utf-8"/>
-    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
 
-  <script type="text/javascript" src="js/main.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8"/>
+    <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
+
+    <script type="text/javascript" src="js/main.js"></script>
   </head>
 
   <body>
@@ -26,15 +26,22 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
+        <a href="#" data-target="mobile-side" class="sidenav-trigger" style="float : right;"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li><a class="text-element" href="../main/index.php">Start</a></li>
           <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
           <li><a class="text-element" href="../login/index.php">Login</a></li>
           <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
-
         </ul>
       </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-side" style="edge : right;">
+      <li><a class="text-element" href="../main/index.php">Start</a></li>
+      <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+      <li><a class="text-element" href="../login/index.php">Login</a></li>
+      <li><a class="text-element" href="../register/index.php">Registrieren</a></li>
+    </ul>
 
     <div class="wrapper">
       <div id="main-container">

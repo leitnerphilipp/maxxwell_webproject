@@ -1,32 +1,49 @@
 $(document).ready(function(){
   $('#modalAGB').modal();
+  $('.sidenav').sidenav();
 });
 
-console.log("ht");
+var passCheck = false;
   function validatePasswords()
  {
-    console.log("awdwa");
-
      var pass1 = document.getElementById('password1');
      var pass2 = document.getElementById('password2');
-     //Store the Confimation Message Object ...
      var message = document.getElementById('confirmMessage');
-     //Set the colors we will be using ...
-     //Compare the values in the password field
-     //and the confirmation field
-     if(pass1.value == pass2.value){
-         //The passwords match.
-         //Set the color to the good color and inform
-         //the user that they have entered the correct password
-         message.innerHTML = "Passwords Match!"
-         var btn = document.getElementById('buttonSend');
-         btn.classList.remove('disabled');
+
+     if(pass1.value == pass2.value && pass2.value.length != 0 && pass1.value.length != 0) {
+         message.innerHTML = "";
+         pass2.classList.remove('invalid');
+         pass2.classList.add('valid');
+         passCheck = true;
+
+         checkForm();
+
      }else{
-         //The passwords do not match.
-         //Set the color to the bad color and
-         //notify the user.
-         message.innerHTML = "Passwords Do Not Match!"
-         var btn = document.getElementById('buttonSend');
-         buttonSend.classList.add('disabled');
+       if(pass2.value.length != 0 && pass1.value.length != 0)
+       {
+         message.innerHTML = "Passwörter sind nicht gleich!";
+         pass2.classList.remove('valid');
+         pass2.classList.add('invalid');
+         passCheck = false;
+
+         checkForm();
+       }
      }
  }
+
+  function checkForm()
+  {
+    if(passCheck == true && document.getElementById('indeterminate-checkbox').checked == true
+      && document.getElementById('username').classList.contains('valid')
+      && document.getElementById('email').classList.contains('valid'))
+    {
+      console.log("aw");
+      var btn = document.getElementById('buttonSend');
+      btn.classList.remove('disabled');
+    }
+
+    else {
+      var btn = document.getElementById('buttonSend');
+      btn.classList.add('disabled');
+    }
+  }

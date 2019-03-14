@@ -1,7 +1,6 @@
 
 #login-container {
 width: 40%;
-background-color: #f5f5f5;
 display: block;
 margin: auto;
 margin-top: 5%;
@@ -46,6 +45,13 @@ margin-top: 5%;
 	text-align: center;
 }
 
+.btn {
+	background-color: #FF0988 !important;
+}
+
+.btn:hover {
+	background-color: #FF0988 !important;
+}
 
 /* label focus color */
 .input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {

@@ -66,3 +66,22 @@ margin-top: 5%;
   float: right;
   margin: 2%;
 }
+
+.btn {
+	background-color: #FF0988 !important;
+}
+
+.btn:hover {
+	background-color: #FF0988 !important;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label, .materialize-textarea:focus:not([readonly]) + label {
+ color: #FF0988 !important;
+}
+
+/* label underline focus color */
+    .input-field input:focus, .materialize-textarea:focus:not([readonly]) {
+     border-bottom: 1px solid #FF0988 !important;
+     box-shadow: 0 1px 0 0 #FF0988 !important;
+    }

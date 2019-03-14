@@ -1,7 +1,6 @@
 
 #login-container {
 width: 40%;
-background-color: #f5f5f5;
 display: block;
 margin: auto;
 margin-top: 5%;
@@ -27,8 +26,8 @@ margin-top: 5%;
 }
 
 .confirmMessage {
-	margin-left: auto;
-	text-align: center;
+	padding-left: 10%;
+	padding-top: -10%;
 }
 
 .nav-wrapper {

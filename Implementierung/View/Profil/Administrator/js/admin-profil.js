@@ -35,4 +35,6 @@ $(document).ready(function() {
 
   $(document).ready(function() {
     $('select').material_select();
+    $('.sidenav').sidenav();
+    $('.collapsible').collapsible();
   });

@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
+    <title>Maxxwell - Kontakt</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-  <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8"/>
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
 
   <script type="text/javascript" src="js/contact.js"></script>
 
-
+  <!-- Mapbox API und Karte initialiesieren-->
   <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
-<style>
-body { margin:0; padding:0; }
-#map {position: absolute; width: 48%; height: 50%;
- }
-</style>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.49.0/mapbox-gl.css' rel='stylesheet' />
+  <style>
+    body { margin:0; padding:0; }
+    #map {position: absolute; width: 48%; height: 50%; margin-top: 5%;}
+  </style>
   </head>
 
   <body>
@@ -59,7 +57,7 @@ body { margin:0; padding:0; }
           .addTo(map);
           map.addControl(new MapboxGeocoder({
             accessToken: mapboxgl.accessToken
-}));
+          }));
       </script>
     </div>
     <div id="contact-right">

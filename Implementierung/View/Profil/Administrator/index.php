@@ -21,17 +21,16 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!--Import Google Icon Font-->
+    <title>Maxxwell - Administrator</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
-  <link rel="stylesheet" href="css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <meta charset="utf-8"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.css">
+    <link rel="stylesheet" href="css/style.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8"/>
     <script  src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.js"></script>
 
-  <script type="text/javascript" src="js/admin-profil.js"></script>
+    <script type="text/javascript" src="js/admin-profil.js"></script>
   </head>
 
   <body>
@@ -39,14 +38,22 @@
     <nav>
       <div class="nav-wrapper">
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
+        <a href="#" data-target="mobile-side" class="sidenav-trigger" style="float : right;"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="text-element" href="../../main/index.php">Start</a></li>
-          <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
+          <li><a class="text-element" href="../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
           <li class="active"><a class="text-element" href="">Profil</a></li>
           <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
         </ul>
       </div>
     </nav>
+
+    <ul class="sidenav" id="mobile-side" style="edge : right;">
+      <li><a class="text-element" href="../main/index.php">Start</a></li>
+      <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+      <li class="active"><a class="text-element" href="">Profil</a></li>
+      <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
+    </ul>
 
     <div class="wrapper">
 
@@ -131,11 +138,11 @@
                         <div class="row">
                          <div class="col s3">
                            <div class="input-field">
-                             <input id="assignment_title" type="text" class="validate" name="assignment_title" value="<?php echo htmlspecialchars($assignment_name2[$i]); ?>">
+                             <input id="assignment_title" type="text" class="validate" name="assignment_title" pattern="[^'\x22]+" value="<?php echo htmlspecialchars($assignment_name2[$i]); ?>">
                              <label for="assignment_title">Titel</label>
                            </div>
                            <div class="input-field">
-                             <input id="assignment_desc" type="text" class="validate" name="assignment_desc" value="<?php echo htmlspecialchars($assignment_desc2[$i]); ?>"></input>
+                             <input id="assignment_desc" type="text" class="validate" name="assignment_desc" pattern="[^'\x22]+" value="<?php echo htmlspecialchars($assignment_desc2[$i]); ?>"></input>
                              <label for="assignment_desc">Beschreibung</label>
                            </div>
                            <p>
@@ -155,11 +162,11 @@
                          </div>
                          <div class="col s3">
                            <div class="input-field">
-                             <input id="first-name" type="text" class="validate" name="first-name" value="<?php echo htmlspecialchars($firstname); ?>">
+                             <input id="first-name" type="text" class="validate" name="first-name" pattern="[A-Za-z]+" value="<?php echo htmlspecialchars($firstname); ?>">
                              <label for="first-name">Vorname</label>
                            </div>
                            <div class="input-field">
-                             <input id="last-name" type="text" class="validate" name="last-name" value="<?php echo htmlspecialchars($lastname); ?>">
+                             <input id="last-name" type="text" class="validate" name="last-name" pattern="[A-Za-z]+" value="<?php echo htmlspecialchars($lastname); ?>">
                              <label for="last-name">Nachname</label>
                            </div>
                            <p>
@@ -178,47 +185,47 @@
                          <p>Geburtstag</p>
                          <input type="date" class="datepicker" name="date" value="<?php echo htmlspecialchars($date); ?>"/>
                          <div class="input-field">
-                           <input id="company" type="text" class="validate" name="company" value="<?php echo htmlspecialchars($company); ?>">
+                           <input id="company" type="text" class="validate" name="company" pattern="[^'\x22]+" value="<?php echo htmlspecialchars($company); ?>">
                            <label for="company">Firma/Unternehmen</label>
                          </div>
                          <div class="input-field">
-                           <input id="description" type="text" class="validate" name="short-description" value="<?php echo htmlspecialchars($description); ?>"></input>
+                           <input id="description" type="text" class="validate" name="short-description" pattern="[^'\x22]+"  value="<?php echo htmlspecialchars($description); ?>"></input>
                            <label for="description">Kurze Selbstbeschreibung</label>
                          </div>
                          </div>
                          <div class="col s3">
                            <div class="input-field">
-                             <input id="street" type="text" class="validate" name="street" value="<?php echo htmlspecialchars($street); ?>">
+                             <input id="street" type="text" class="validate" name="street" pattern="[^'\x22]+" value="<?php echo htmlspecialchars($street); ?>">
                              <label for="street">Straße</label>
                            </div>
                            <div class="input-field">
-                             <input id="number" type="text" class="validate" name="number" value="<?php echo htmlspecialchars($number); ?>">
+                             <input id="number" type="text" class="validate" name="number" pattern="[A-Za-z0-9]+" value="<?php echo htmlspecialchars($number); ?>">
                              <label for="number">Hausnummer</label>
                            </div>
                            <div class="input-field">
-                             <input id="postalcode" type="text" class="validate" name="postalcode" value="<?php echo htmlspecialchars($postalcode); ?>">
+                             <input id="postalcode" type="text" class="validate" name="postalcode" pattern="[A-Za-z0-9]+" value="<?php echo htmlspecialchars($postalcode); ?>">
                              <label for="postalcode">Postleitzahl</label>
                            </div>
                            <div class="input-field">
-                             <input id="city" type="text" class="validate" name="city" value="<?php echo htmlspecialchars($city); ?>">
+                             <input id="city" type="text" class="validate" name="city" pattern="[A-Za-z0-9]+" value="<?php echo htmlspecialchars($city); ?>">
                              <label for="city">Ort</label>
                            </div>
                            <div class="input-field">
-                             <input id="country" type="text" class="validate" name="country" value="<?php echo htmlspecialchars($country); ?>">
+                             <input id="country" type="text" class="validate" name="country" pattern="[A-Za-z0-9]+" value="<?php echo htmlspecialchars($country); ?>">
                              <label for="country">Land</label>
                            </div>
                          </div>
                          <div class="col s3 final">
                            <div class="input-field">
-                             <input id="homepage" type="text" class="validate" name="homepage" value="<?php echo htmlspecialchars($homepage); ?>">
+                             <input id="homepage" type="text" class="validate" name="homepage" pattern="[^'\x22]+" value="<?php echo htmlspecialchars($homepage); ?>">
                              <label for="homepage">Homepage</label>
                            </div>
                            <div class="input-field">
-                             <input id="telephone" type="text" class="validate" name="telephone" value="<?php echo htmlspecialchars($telephone); ?>">
+                             <input id="telephone" type="text" class="validate" name="telephone" pattern="[0-9]+" value="<?php echo htmlspecialchars($telephone); ?>">
                              <label for="telephone">Telefonnummer</label>
                            </div>
                            <div class="input-field">
-                             <input id="fax" type="text" class="validate" name="fax" value="<?php echo htmlspecialchars($fax); ?>">
+                             <input id="fax" type="text" class="validate" name="fax" pattern="[0-9]+" value="<?php echo htmlspecialchars($fax); ?>">
                              <label for="fax">Fax</label>
                            </div>
                          </div>
