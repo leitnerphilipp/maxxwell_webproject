@@ -43,8 +43,8 @@ foreach ($assignments as $row) {
         <a href="#" class="brand-logo text-element left">Maxxwell Computers</a>
         <a href="#" data-target="mobile-side" class="sidenav-trigger" style="float : right;"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li><a class="text-element" href="../main/index.php">Start</a></li>
-          <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+          <li><a class="text-element" href="../../main/index.php">Start</a></li>
+          <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
           <li class="active"><a class="text-element" href="">Profil</a></li>
           <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
         </ul>
@@ -52,8 +52,8 @@ foreach ($assignments as $row) {
     </nav>
 
     <ul class="sidenav" id="mobile-side" style="edge : right;">
-      <li><a class="text-element" href="../main/index.php">Start</a></li>
-      <li><a class="text-element" href="../contact/index.php">Kontakt</a></li>
+      <li><a class="text-element" href="../../main/index.php">Start</a></li>
+      <li><a class="text-element" href="../../contact/index.php">Kontakt</a></li>
       <li class="active"><a class="text-element" href="">Profil</a></li>
       <li><a class="text-element" href="../../../Controller/Logout.php">Logout</a></li>
     </ul>
