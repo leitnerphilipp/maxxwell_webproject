@@ -64,12 +64,16 @@
         include '../../Controller/GetShowcases.php';
         ?>
         <div class="col s3">
-        <div class="showcase">
-           <span class="showcase-content"><?php echo $l_name ?></span>
-           <span class="showcase-content"><?php echo $l_desc ?></span>
-           <span class="showcase-content"><?php echo $l_email ?></span>
-           <span class="showcase-content"><?php echo $l_homepage ?></span>
-        </div>
+        <div class="card showcase">
+          <div class="card-content white-text">
+              <span class="card-title showcase-content"><?php echo $l_name ?></span>
+              <p><?php echo $l_desc ?></p>
+            </div>
+            <div class="card-action">
+              <span class="showcase-content"><?php echo $l_email ?></span>
+              <span class="showcase-content"><?php echo $l_homepage ?></span>
+            </div>
+      </div>
       </div>
     <?php } ?>
       </div>

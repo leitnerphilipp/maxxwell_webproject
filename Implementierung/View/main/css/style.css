@@ -26,17 +26,12 @@ h3,h4{
 }
 
 .showcase {
-  text-align: center;
-	border-width: 5px;
 	width: 70%;
 	margin: 8%;
-	border-style: inset;
-	border-color: #FF0988;
 }
 
 .showcase-content{
   text-decoration: none;
-  color: black;
 	display:table;
 	margin:0 auto;
 }
@@ -52,6 +47,10 @@ h3,h4{
 
 .brand-logo.text-element {
 	color: #FF0998;
+}
+
+.card {
+	background-color: #FF0988;
 }
 
 @media screen and (max-width: 1024px) {
