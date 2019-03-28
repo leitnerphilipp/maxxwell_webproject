@@ -85,3 +85,16 @@ margin-top: 5%;
      border-bottom: 1px solid #FF0988 !important;
      box-shadow: 0 1px 0 0 #FF0988 !important;
     }
+
+/* Radio button inner+ Border*/
+    [type="radio"]:checked + span::after, [type="radio"].with-gap:checked + span::after {
+        background-color: #FF0988 !important;
+        border-color: #FF0988 !important;
+    }
+
+
+@media screen and (max-width: 1024px) {
+		      .col {
+		        width : 100% !important;
+		      }
+		    }

@@ -60,3 +60,9 @@ margin-top: 5%;
         background-color: #FF0988 !important;
         border-color: #FF0988 !important;
     }
+
+@media screen and (max-width: 1024px) {
+      .col {
+        width : 100% !important;
+      }
+    }

@@ -53,3 +53,9 @@ h3,h4{
 .brand-logo.text-element {
 	color: #FF0998;
 }
+
+@media screen and (max-width: 1024px) {
+      .col {
+        width : 100% !important;
+      }
+    }
