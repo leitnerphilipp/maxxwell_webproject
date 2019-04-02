@@ -43,7 +43,7 @@
         <form class="col s12" method="post" action="../../Controller/Login.php">
           <div class="row">
             <div class="input-field col s12">
-              <input id="username" name="username" type="text" class="validate" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required>
+              <input id="username" name="username" type="text" class="validate" pattern="[^'\x22]+" required>
               <label for="username">E-mail oder Benutzername</label>
             </div>
           </div>

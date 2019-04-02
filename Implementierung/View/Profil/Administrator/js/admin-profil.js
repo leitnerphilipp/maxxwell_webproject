@@ -34,7 +34,7 @@ $(document).ready(function() {
 
 
   $(document).ready(function() {
-    $('select').material_select();
+    $('select').formSelect();
     $('.sidenav').sidenav();
     $('.collapsible').collapsible();
   });
